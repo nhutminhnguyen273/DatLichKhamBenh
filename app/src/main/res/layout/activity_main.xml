@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    tools:ignore="ExtraText">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="Nhận Xét"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#2DF14F"
+        android:paddingVertical="5dp"
+        android:text="Đánh giá bác sĩ khám"
+        android:textAlignment="center"
+        android:textSize="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/Idgroup1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Không hài lòng"
+            android:textSize="18dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hài lòng"
+            android:textSize="18dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Rất hài lòng"
+            android:textSize="18dp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#2DF14F"
+        android:paddingVertical="5dp"
+        android:text="Đánh giá độ hiệu quả"
+        android:textAlignment="center"
+        android:textSize="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/Idgroup2"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButton8"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hiệu quả"
+            android:textSize="18dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="19dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Không hiệu quả"
+            android:textSize="18dp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#2DF14F"
+        android:paddingVertical="5dp"
+        android:text="Đánh giá chất lượng dịch vụ "
+        android:textAlignment="center"
+        android:textSize="20dp"/>
+
+    <RadioGroup
+        android:id="@+id/Idgroup3"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Chưa tốt"
+            android:textSize="18dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tốt"
+            android:textSize="18dp" />
+
+        <RadioButton
+            android:id="@+id/radioButton9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Rất tốt"
+            android:textSize="18dp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#2DF14F"
+        android:paddingVertical="5dp"
+        android:text="Ghi nhận khác"
+        android:textAlignment="center"
+        android:textSize="20dp"
+
+        />
+
+    <EditText
+        android:id="@+id/editTextYkien"
+        android:layout_width="match_parent"
+        android:layout_height="69dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Ý kiến của bạn "
+        android:inputType="textMultiLine"
+        android:labelFor="@+id/textView10"
+        android:minLines="3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnHuy"
+            android:layout_width="207dp"
+            android:layout_height="wrap_content"
+            android:text="Hủy"
+            android:textSize="18dp"
+            />
+
+        <Button
+            android:id="@+id/btnLuu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Lưu"
+            android:textSize="18dp"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>
