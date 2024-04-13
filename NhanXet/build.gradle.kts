@@ -1,4 +1,16 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-plugins {
-    alias(libs.plugins.androidApplication) apply false
+buildscript {
+    repositories {
+        google()
+        // các repositories khác nếu cần
+    }
+    dependencies {
+        // Thêm dependency của google-services
+        classpath("com.google.gms:google-services:4.3.15")
+    }
 }
+
+plugins {
+    id("com.android.application") version "7.3.1" apply false;
+    id("com.android.library") version "7.3.1" apply false ;
+}
+

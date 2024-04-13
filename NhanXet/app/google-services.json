@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "81683484614",
+    "project_id": "nhanxetfirebase",
+    "storage_bucket": "nhanxetfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81683484614:android:3f9138da23e336d3e42cc7",
+        "android_client_info": {
+          "package_name": "com.example.nhan_xet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbe0W2ChSBXVMjTexo-IcOBQTSddXxAC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
