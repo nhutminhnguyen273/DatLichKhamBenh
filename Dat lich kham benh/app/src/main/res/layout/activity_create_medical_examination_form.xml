@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CreateMedicalExaminationFormActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:text="" />
+
+        <ImageView
+            android:id="@+id/imgCMELogo"
+            android:layout_width="match_parent"
+            android:layout_height="93dp"
+            app:srcCompat="@mipmap/ic_launcher"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:id="@+id/txtCMETitle"
+            android:layout_width="match_parent"
+            android:layout_height="81dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/teal_700"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:text="@string/ph_ng_kh_m" />
+
+        <EditText
+            android:id="@+id/txtCMEFullName"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/full_name"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/txtCMEDate"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Medical examination date"
+            android:inputType="date"
+            android:importantForAutofill="no" />
+
+        <Spinner
+            android:id="@+id/spnIncludingExamination"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/txtCMEBearWitness"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Bear witness"
+            android:inputType="text"
+            android:importantForAutofill="no" />
+
+        <TextView
+            android:id="@+id/txtCMEStatus"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:textSize="20sp"
+            android:text="Status: Waiting for progressing"
+            android:importantForAutofill="no" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCMECancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:text="@string/cancel" />
+
+            <Button
+                android:id="@+id/btnCMEConfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/confirm" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:text="" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:text="" />
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:text="" />
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:text="" />
+    </LinearLayout>
+</ScrollView>

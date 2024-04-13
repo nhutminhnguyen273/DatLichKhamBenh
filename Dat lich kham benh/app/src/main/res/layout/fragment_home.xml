@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.home.HomeFragment">
+
+    <ImageView
+        android:id="@+id/imgHLogo"
+        android:layout_width="match_parent"
+        android:layout_height="93dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/txtHTitle"
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:background="@color/teal_700"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"
+        android:text="Phòng Khám" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnHCreateProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="Tạo hồ sơ" />
+
+        <Button
+            android:id="@+id/btnHCrMedicalExaminationForm"
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:layout_weight="1"
+            android:text="Lập phiếu khám" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnHHistory"
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:text="Lịch sử khám bệnh" />
+
+        <Button
+            android:id="@+id/btnHListProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:layout_weight="1"
+            android:text="Danh sách hồ sơ" />
+    </LinearLayout>
+
+</LinearLayout>
