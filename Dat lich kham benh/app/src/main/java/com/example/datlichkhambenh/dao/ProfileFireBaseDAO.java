@@ -65,7 +65,7 @@ public class ProfileFireBaseDAO {
                     .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                         @Override
                         public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                            List<Profile> profileList = new ArrayList<>();
+                            List<Profile> profileList = new  ArrayList<>();
                             for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                                 Profile profile = documentSnapshot.toObject(Profile.class);
                                 profileList.add(profile);
