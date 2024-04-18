@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ListProfileActivity">
+    tools:context=".DListProfileActivity">
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -23,29 +23,14 @@
         android:text="Danh sách hồ sơ" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvLPProfile"
+        android:id="@+id/rvDLProfile"
         android:layout_width="match_parent"
-        android:layout_height="483dp" />
+        android:layout_height="505dp" />
 
-    <LinearLayout
+    <Button
+        android:id="@+id/btnDLPCancel"
         android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:text="Cancel" />
 
-        <Button
-            android:id="@+id/btnLPProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginEnd="10dp"
-            android:text="@string/create_profile" />
-
-        <Button
-            android:id="@+id/btnLPCancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/cancel" />
-    </LinearLayout>
 </LinearLayout>

@@ -12,32 +12,30 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.datlichkhambenh.dao.MedicalHistoryFirebaseDAO;
+import com.example.datlichkhambenh.dao.InvoiceFireBaseDAO;
 
-public class ListMedicalHistoryActivity extends AppCompatActivity {
-    private Button btnCreateMedicalHistory, btnCancel;
-    private MedicalHistoryFirebaseDAO medicalHistoryFirebaseDAO;
+public class InvoiceActivity extends AppCompatActivity {
+    Button btnCancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_list_medical_history);
+        setContentView(R.layout.activity_invoice);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        medicalHistoryFirebaseDAO = new MedicalHistoryFirebaseDAO(this);
-        RecyclerView recyclerView = findViewById(R.id.rvLMedicalHistory);
+        InvoiceFireBaseDAO invoiceBaseDAO = new InvoiceFireBaseDAO(this);
+        RecyclerView recyclerView = findViewById(R.id.rvInvoice);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        medicalHistoryFirebaseDAO.getMedicalHistoryByEmail(recyclerView);
-        btnCancel = findViewById(R.id.btnLMHCancel);
+        invoiceBaseDAO.getInvoiceByEmail(recyclerView);
+        btnCancel = findViewById(R.id.btnInvoiceCancel);
         btnCancel.setOnClickListener(v -> cancel());
     }
-    private void cancel() {
-        Intent i = new Intent(ListMedicalHistoryActivity.this, MainActivity.class);
+    private void cancel(){
+        Intent i = new Intent(InvoiceActivity.this, MainActivity.class);
         startActivity(i);
     }
 }

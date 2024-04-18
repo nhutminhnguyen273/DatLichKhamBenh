@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".RegisterActivity">
+    tools:context=".EnterInformationActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,23 +17,13 @@
             android:layout_height="79dp"
             android:text="" />
         <ImageView
-            android:id="@+id/imgRLogo"
+            android:id="@+id/imgEILogo"
             android:layout_width="match_parent"
             android:layout_height="93dp"
             android:src="@drawable/logo"
             android:importantForAccessibility="no" />
-        <TextView
-            android:id="@+id/txtRTitle"
-            android:layout_width="match_parent"
-            android:layout_height="81dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/teal_700"
-            android:gravity="center"
-            android:textSize="30sp"
-            android:textColor="@color/white"
-            android:text="Đăng ký" />
         <EditText
-            android:id="@+id/txtRFullName"
+            android:id="@+id/txtEIFullName"
             android:layout_width="match_parent"
             android:layout_height="96dp"
             android:layout_marginTop="10dp"
@@ -43,7 +32,7 @@
             android:inputType="text"
             android:importantForAutofill="no" />
         <EditText
-            android:id="@+id/txtRDateOfBirth"
+            android:id="@+id/txtEIDateOfBirth"
             android:layout_width="match_parent"
             android:layout_height="96dp"
             android:layout_marginTop="10dp"
@@ -51,16 +40,14 @@
             android:hint="@string/date_of_birth"
             android:inputType="date"
             android:importantForAutofill="no" />
-
         <RadioGroup
-            android:id="@+id/rgGender"
+            android:id="@+id/rgEIGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="16dp">
-
             <RadioButton
-                android:id="@+id/rdbMale"
+                android:id="@+id/rdbEIMale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
@@ -68,15 +55,14 @@
                 android:checked="true"/>
 
             <RadioButton
-                android:id="@+id/rdbFemale"
+                android:id="@+id/rdbEIFemale"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:text="Nữ"/>
         </RadioGroup>
-
         <EditText
-            android:id="@+id/txtRPhoneNumber"
+            android:id="@+id/txtEIPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="96dp"
             android:layout_marginTop="10dp"
@@ -85,7 +71,7 @@
             android:inputType="phone"
             android:importantForAutofill="no" />
         <EditText
-            android:id="@+id/txtREmail"
+            android:id="@+id/txtEIEmail"
             android:layout_width="match_parent"
             android:layout_height="96dp"
             android:layout_marginTop="10dp"
@@ -93,26 +79,37 @@
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:importantForAutofill="no" />
+        <Spinner
+            android:id="@+id/spEIDoctor"
+            android:layout_width="match_parent"
+            android:layout_height="96dp" />
         <EditText
-            android:id="@+id/txtRPassword"
+            android:id="@+id/txtEISick"
             android:layout_width="match_parent"
             android:layout_height="96dp"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:importantForAutofill="no"
-            tools:ignore="HardcodedText" />
+            android:hint="Bệnh"
+            android:inputType="text"
+            android:importantForAutofill="no" />
         <EditText
-            android:id="@+id/txtRConfirmPassword"
+            android:id="@+id/txtEIDate"
             android:layout_width="match_parent"
             android:layout_height="96dp"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:hint="Confirm Password"
-            android:inputType="textPassword"
-            android:importantForAutofill="no"
-            tools:ignore="HardcodedText" />
+            android:hint="Ngày khám"
+            android:inputType="date"
+            android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/txtEITotalAmount"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Tổng tiền"
+            android:inputType="number"
+            android:importantForAutofill="no" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="66dp"
@@ -120,7 +117,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnRCancel"
+                android:id="@+id/btnEICancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -128,11 +125,11 @@
                 android:text="@string/cancel" />
 
             <Button
-                android:id="@+id/btnRRegister"
+                android:id="@+id/btnEIAdd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/register" />
+                android:text="Add" />
         </LinearLayout>
         <TextView
             android:id="@+id/textView2"

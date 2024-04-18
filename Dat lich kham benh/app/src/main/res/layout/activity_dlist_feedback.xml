@@ -6,46 +6,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ListProfileActivity">
+    tools:context=".DListFeedbackActivity">
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="79dp"
         android:text="" />
     <TextView
-        android:id="@+id/txtLPTitle"
+        android:id="@+id/txtLFTitle"
         android:layout_width="match_parent"
         android:layout_height="79dp"
         android:background="@color/teal_700"
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="30sp"
-        android:text="Danh sách hồ sơ" />
+        android:text="Danh sách phản hồi" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvLPProfile"
+        android:id="@+id/rvDLFeedback"
         android:layout_width="match_parent"
-        android:layout_height="483dp" />
+        android:layout_height="512dp" />
 
-    <LinearLayout
+    <Button
+        android:id="@+id/btnDLFCancel"
         android:layout_width="match_parent"
-        android:layout_height="68dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:text="Cancel" />
 
-        <Button
-            android:id="@+id/btnLPProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginEnd="10dp"
-            android:text="@string/create_profile" />
-
-        <Button
-            android:id="@+id/btnLPCancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/cancel" />
-    </LinearLayout>
 </LinearLayout>

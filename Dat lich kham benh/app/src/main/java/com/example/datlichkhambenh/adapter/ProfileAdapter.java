@@ -11,7 +11,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.datlichkhambenh.CreateMedicalExaminationFormActivity;
 import com.example.datlichkhambenh.R;
 import com.example.datlichkhambenh.dao.ProfileFireBaseDAO;
 import com.example.datlichkhambenh.model.Profile;
@@ -27,6 +26,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
         this.listProfile = listProfile;
         this.profileFireBaseDAO = profileFireBaseDAO;
     }
+
     @NonNull
     @Override
     public ProfileAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -40,26 +40,27 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ProfileAdapter.ViewHolder holder, int position) {
         Profile temp = listProfile.get(position);
-        holder.txtFullName.setText(temp.getFullName());
-        holder.txtDateOfBirth.setText(temp.getDateOfBirth());
-        if(temp.getGender()){
+        holder.txtFullName.setText("Họ tên: "+temp.getFullName());
+        holder.txtDateOfBirth.setText("Ngày sinh: "+temp.getDateOfBirth());
+        if(temp.isGender() == true){
             holder.txtGender.setText("Nam");
         }
         else{
             holder.txtGender.setText("Nữ");
         }
-        holder.txtAddress.setText(temp.getAddress());
-        holder.txtCountry.setText(temp.getCountry());
-        holder.txtPhoneNumber.setText(temp.getPhoneNumber());
-        holder.txtEmail.setText(temp.getEmail());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(context, CreateMedicalExaminationFormActivity.class);
-                i.putExtra("id", temp.getId());
-                context.startActivity(i);
-            }
-        });
+        holder.txtAddress.setText("Địa chỉ: "+temp.getAddress());
+        holder.txtCountry.setText("Quốc gia: "+temp.getCountry());
+        holder.txtPhoneNumber.setText("SĐT: "+temp.getPhoneNumber());
+        holder.txtEmail.setText("Email: "+temp.getEmail());
+        holder.txtSick.setText("Chịu chứng: "+temp.getSick());
+        holder.txtDoctor.setText("Bác sĩ: "+temp.getDoctor());
+        holder.txtMEDate.setText("Ngày khám: "+temp.getMEDate());
+        if(temp.isStatus() == false){
+            holder.txtStatus.setText("Chờ xử lý");
+        }
+        else{
+            holder.txtStatus.setText("Xác nhận");
+        }
     }
 
     @Override
@@ -68,7 +69,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView txtFullName, txtDateOfBirth, txtGender, txtAddress, txtCountry, txtPhoneNumber, txtEmail;
+        TextView txtFullName, txtDateOfBirth, txtGender, txtAddress, txtCountry, txtPhoneNumber, txtEmail, txtSick, txtDoctor, txtMEDate, txtStatus;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtFullName = (TextView) itemView.findViewById(R.id.txtLPFullName);
@@ -78,6 +79,10 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ViewHold
             txtCountry = (TextView) itemView.findViewById(R.id.txtLPCountry);
             txtPhoneNumber = (TextView) itemView.findViewById(R.id.txtLPPhoneNumber);
             txtEmail = (TextView) itemView.findViewById(R.id.txtLPEmail);
+            txtSick = (TextView) itemView.findViewById(R.id.txtLPSick);
+            txtDoctor = (TextView) itemView.findViewById(R.id.txtLPDoctor);
+            txtMEDate = (TextView) itemView.findViewById(R.id.txtLPMEDate);
+            txtStatus = (TextView) itemView.findViewById(R.id.txtLPStatus);
         }
     }
 }

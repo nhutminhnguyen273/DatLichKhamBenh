@@ -6,35 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LoginActivity"
-    tools:ignore="UseCompoundDrawables">
-
+    tools:context=".EvaluateActivity">
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="79dp"
         android:text="" />
-
-    <ImageView
-        android:id="@+id/imgLLogo"
-        android:layout_width="match_parent"
-        android:layout_height="93dp"
-        android:src="@drawable/logo"
-        android:importantForAccessibility="no" />
-
     <TextView
-        android:id="@+id/txtLTitle"
+        android:id="@+id/txtETitle"
         android:layout_width="match_parent"
-        android:layout_height="81dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="79dp"
         android:background="@color/teal_700"
         android:gravity="center"
-        android:textSize="30sp"
         android:textColor="@color/white"
-        android:text="Đăng nhập" />
-
+        android:textSize="30sp"
+        android:text="Đánh giá" />
     <EditText
-        android:id="@+id/txtLEmail"
+        android:id="@+id/txtEEmail"
         android:layout_width="match_parent"
         android:layout_height="96dp"
         android:layout_marginTop="10dp"
@@ -42,18 +30,32 @@
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:importantForAutofill="no" />
-
+    <Spinner
+        android:id="@+id/spEDoctor"
+        android:layout_width="match_parent"
+        android:layout_height="76dp" />
     <EditText
-        android:id="@+id/txtLPass"
+        android:id="@+id/txtEEvaluateDate"
         android:layout_width="match_parent"
         android:layout_height="96dp"
         android:layout_marginTop="10dp"
         android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        tools:ignore="HardcodedText"
+        android:hint="Ngày đánh giá"
+        android:inputType="date"
         android:importantForAutofill="no" />
-
+    <Spinner
+        android:id="@+id/spEvaluate"
+        android:layout_width="match_parent"
+        android:layout_height="76dp" />
+    <EditText
+        android:id="@+id/txtEComment"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Bình luận"
+        android:inputType="text"
+        android:importantForAutofill="no" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="66dp"
@@ -61,25 +63,18 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnLLogin"
+            android:id="@+id/btnECancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:text="Đăng nhập" />
+            android:text="@string/cancel" />
 
         <Button
-            android:id="@+id/btnLRegister"
+            android:id="@+id/btnEAdd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Đăng ký" />
+            android:text="Đánh giá" />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnLResetPass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Quên mật khẩu" />
-
 </LinearLayout>

@@ -2,21 +2,19 @@ package com.example.datlichkhambenh.model;
 
 import java.util.HashMap;
 
-public class Profile {
+public class Information {
     private String id;
     private String fullName;
     private String dateOfBirth;
     private boolean gender;
-    private String address;
-    private String country;
-    private String phoneNumber;
+    private  String phoneNumber;
     private String email;
-    private String sick;
     private String doctor;
-    private String mEDate;
-    private boolean status;
+    private String sick;
+    private String date;
+    private int totalAmount;
 
-    public Profile() {
+    public Information() {
 
     }
 
@@ -52,22 +50,6 @@ public class Profile {
         this.gender = gender;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -84,14 +66,6 @@ public class Profile {
         this.email = email;
     }
 
-    public String getSick() {
-        return sick;
-    }
-
-    public void setSick(String sick) {
-        this.sick = sick;
-    }
-
     public String getDoctor() {
         return doctor;
     }
@@ -100,36 +74,41 @@ public class Profile {
         this.doctor = doctor;
     }
 
-    public String getMEDate() {
-        return mEDate;
+    public String getSick() {
+        return sick;
     }
 
-    public void setMEDate(String mEDate) {
-        this.mEDate = mEDate;
+    public void setSick(String sick) {
+        this.sick = sick;
     }
 
-    public boolean isStatus() {
-        return status;
+    public String getDate() {
+        return date;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setDate(String date) {
+        this.date = date;
     }
 
+    public int getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(int totalAmount) {
+        this.totalAmount = totalAmount;
+    }
     public HashMap<String, Object> convertHashMap(){
         HashMap<String, Object> work = new HashMap<>();
         work.put("id", id);
         work.put("fullName",fullName);
         work.put("dateOfBirth", dateOfBirth);
         work.put("gender", gender);
-        work.put("address", address);
-        work.put("country", country);
         work.put("phoneNumber", phoneNumber);
         work.put("email", email);
-        work.put("sick", sick);
         work.put("doctor", doctor);
-        work.put("mEDate", mEDate);
-        work.put("status", status);
+        work.put("sick", sick);
+        work.put("date", date);
+        work.put("totalAmount", totalAmount);
         return work;
     }
 }

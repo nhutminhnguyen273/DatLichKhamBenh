@@ -12,36 +12,33 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.datlichkhambenh.dao.ProfileFireBaseDAO;
+import com.example.datlichkhambenh.adapter.EvaluateAdapter;
+import com.example.datlichkhambenh.dao.EvaluateFireBaseDAO;
 
-public class ListProfileActivity extends AppCompatActivity {
-    Button btnCreateProfile, btnCancel;
-
+public class ListEvaluateActivity extends AppCompatActivity {
+    private EvaluateAdapter adapter;
+    private EvaluateFireBaseDAO evaluateFireBaseDAO;
+    Button btnCancel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_list_profile);
+        setContentView(R.layout.activity_list_evaluate);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        ProfileFireBaseDAO profileFireBaseDAO = new ProfileFireBaseDAO(this);
-        RecyclerView recyclerView = findViewById(R.id.rvLPProfile);
+        RecyclerView recyclerView = findViewById(R.id.rvLEvaluate);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        profileFireBaseDAO.getProfileByEmail(recyclerView);
-        btnCreateProfile = findViewById(R.id.btnLPProfile);
-        btnCancel = findViewById(R.id.btnLPCancel);
-        btnCreateProfile.setOnClickListener(v -> createProfile());
+        evaluateFireBaseDAO = new EvaluateFireBaseDAO(this);
+        evaluateFireBaseDAO.getAllEvaluate(recyclerView);
+        btnCancel = findViewById(R.id.btnLECancel);
         btnCancel.setOnClickListener(v -> cancel());
-    }
-    private void createProfile(){
-        Intent i = new Intent(ListProfileActivity.this, ProfileActivity.class);
-        startActivity(i);
+
     }
     private void cancel(){
-        Intent i = new Intent(ListProfileActivity.this, MainActivity.class);
+        Intent i = new Intent(ListEvaluateActivity.this, DoctorActivity.class);
         startActivity(i);
     }
 }

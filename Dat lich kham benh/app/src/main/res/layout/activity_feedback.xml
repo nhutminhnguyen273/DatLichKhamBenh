@@ -5,102 +5,92 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".CreateMedicalExaminationFormActivity">
+    tools:context=".FeedbackActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="79dp"
             android:text="" />
-
         <ImageView
-            android:id="@+id/imgCMELogo"
+            android:id="@+id/imgFLogo"
             android:layout_width="match_parent"
             android:layout_height="93dp"
-            app:srcCompat="@mipmap/ic_launcher"
+            android:src="@drawable/logo"
             android:importantForAccessibility="no" />
-
         <TextView
-            android:id="@+id/txtCMETitle"
+            android:id="@+id/txtFTitle"
             android:layout_width="match_parent"
-            android:layout_height="81dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="79dp"
             android:background="@color/teal_700"
             android:gravity="center"
-            android:textSize="30sp"
             android:textColor="@color/white"
-            android:text="@string/ph_ng_kh_m" />
-
+            android:textSize="30sp"
+            android:text="Phản hồi" />
         <EditText
-            android:id="@+id/txtCMEFullName"
+            android:id="@+id/txtFFullName"
             android:layout_width="match_parent"
             android:layout_height="96dp"
             android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="@string/full_name"
+            android:inputType="text"
+            android:importantForAutofill="no" />
+        <EditText
+            android:id="@+id/txtFEmail"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="Email"
             android:inputType="textEmailAddress"
             android:importantForAutofill="no" />
         <EditText
-            android:id="@+id/txtCMEDate"
+            android:id="@+id/txtFEmailDoctor"
             android:layout_width="match_parent"
             android:layout_height="96dp"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:hint="Medical examination date"
-            android:inputType="date"
+            android:hint="Email bác sĩ"
+            android:inputType="textEmailAddress"
             android:importantForAutofill="no" />
-
         <Spinner
-            android:id="@+id/spnIncludingExamination"
+            android:id="@+id/spFDoctor"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:layout_marginTop="16dp" />
-
+            android:layout_height="96dp" />
         <EditText
-            android:id="@+id/txtCMEBearWitness"
+            android:id="@+id/txtFContent"
             android:layout_width="match_parent"
             android:layout_height="96dp"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:hint="Bear witness"
+            android:hint="Content"
             android:inputType="text"
             android:importantForAutofill="no" />
 
-        <TextView
-            android:id="@+id/txtCMEStatus"
-            android:layout_width="match_parent"
-            android:layout_height="66dp"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:textSize="20sp"
-            android:text="Status: Waiting for progressing"
-            android:importantForAutofill="no" />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="66dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="71dp"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnCMECancel"
+                android:id="@+id/btnFFeedback"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:layout_weight="1"
-                android:text="@string/cancel" />
+                android:text="Feedback" />
 
             <Button
-                android:id="@+id/btnCMEConfirm"
+                android:id="@+id/btnFCancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/confirm" />
+                android:text="Cancel" />
         </LinearLayout>
         <TextView
             android:id="@+id/textView2"

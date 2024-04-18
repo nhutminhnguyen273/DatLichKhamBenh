@@ -12,36 +12,37 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.datlichkhambenh.adapter.DListProfileAdapter;
 import com.example.datlichkhambenh.dao.ProfileFireBaseDAO;
 
-public class ListProfileActivity extends AppCompatActivity {
-    Button btnCreateProfile, btnCancel;
-
+public class DListProfileActivity extends AppCompatActivity {
+    private DListProfileAdapter adapter;
+    private ProfileFireBaseDAO profileFireBaseDAO;
+    Button btnCancel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_list_profile);
+        setContentView(R.layout.activity_dlist_profile);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        ProfileFireBaseDAO profileFireBaseDAO = new ProfileFireBaseDAO(this);
-        RecyclerView recyclerView = findViewById(R.id.rvLPProfile);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+        RecyclerView recyclerView = findViewById(R.id.rvDLProfile);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        profileFireBaseDAO.getProfileByEmail(recyclerView);
-        btnCreateProfile = findViewById(R.id.btnLPProfile);
-        btnCancel = findViewById(R.id.btnLPCancel);
-        btnCreateProfile.setOnClickListener(v -> createProfile());
+        profileFireBaseDAO = new ProfileFireBaseDAO(this);
+        profileFireBaseDAO.getAllProfiles(recyclerView);
+        btnCancel = findViewById(R.id.btnDLPCancel);
         btnCancel.setOnClickListener(v -> cancel());
     }
-    private void createProfile(){
-        Intent i = new Intent(ListProfileActivity.this, ProfileActivity.class);
-        startActivity(i);
-    }
     private void cancel(){
-        Intent i = new Intent(ListProfileActivity.this, MainActivity.class);
+        Intent i = new Intent(DListProfileActivity.this, DoctorActivity.class);
         startActivity(i);
     }
 }

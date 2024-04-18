@@ -6,6 +6,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.datlichkhambenh.adapter.DListProfileAdapter;
 import com.example.datlichkhambenh.adapter.ProfileAdapter;
 import com.example.datlichkhambenh.model.Profile;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -19,6 +20,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 public class ProfileFireBaseDAO {
@@ -65,7 +67,7 @@ public class ProfileFireBaseDAO {
                     .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                         @Override
                         public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                            List<Profile> profileList = new  ArrayList<>();
+                            List<Profile> profileList = new ArrayList<>();
                             for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
                                 Profile profile = documentSnapshot.toObject(Profile.class);
                                 profileList.add(profile);
@@ -82,4 +84,49 @@ public class ProfileFireBaseDAO {
                     });
         }
     }
+    public void getAllProfiles(final RecyclerView recyclerView) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            String email = user.getEmail();
+            db.collection("Profile")
+                    .get()
+                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                        @Override
+                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                            List<Profile> profileList = new ArrayList<>();
+                            for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                                Profile profile = documentSnapshot.toObject(Profile.class);
+                                profileList.add(profile);
+                            }
+                            DListProfileAdapter adapter = new DListProfileAdapter(context, ProfileFireBaseDAO.this, profileList);
+                            recyclerView.setAdapter(adapter);
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(context, "Load data failed", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
+    }
+    public void updateProfileStatus(Profile profile) {
+        db.collection("Profile").document(profile.getId())
+                .update("status", profile.isStatus())
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        profile.setStatus(!profile.isStatus());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(context, "Xác nhận không thành công!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+
+
 }

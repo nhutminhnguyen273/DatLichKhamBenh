@@ -6,24 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LoginActivity"
-    tools:ignore="UseCompoundDrawables">
-
+    tools:context=".DoctorActivity">
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="79dp"
         android:text="" />
-
     <ImageView
-        android:id="@+id/imgLLogo"
+        android:id="@+id/imgDLogo"
         android:layout_width="match_parent"
         android:layout_height="93dp"
         android:src="@drawable/logo"
         android:importantForAccessibility="no" />
-
     <TextView
-        android:id="@+id/txtLTitle"
+        android:id="@+id/txtDTitle"
         android:layout_width="match_parent"
         android:layout_height="81dp"
         android:layout_marginTop="10dp"
@@ -31,55 +27,59 @@
         android:gravity="center"
         android:textSize="30sp"
         android:textColor="@color/white"
-        android:text="Đăng nhập" />
-
-    <EditText
-        android:id="@+id/txtLEmail"
+        android:text="Bác sĩ" />
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="96dp"
+        android:layout_height="79dp"
         android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:importantForAutofill="no" />
-
-    <EditText
-        android:id="@+id/txtLPass"
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        tools:ignore="HardcodedText"
-        android:importantForAutofill="no" />
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnDListMedicalExaminationForm"
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:layout_weight="1"
+            android:text="Danh sách phiếu khám" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="66dp"
+        android:layout_height="79dp"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnLLogin"
+            android:id="@+id/btnDEvaluate"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="62dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
-            android:text="Đăng nhập" />
+            android:text="Đánh giá" />
 
         <Button
-            android:id="@+id/btnLRegister"
+            android:id="@+id/btnDLogout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="62dp"
             android:layout_weight="1"
-            android:text="Đăng ký" />
+            android:text="Đăng xuất" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnLResetPass"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Quên mật khẩu" />
+        android:layout_height="79dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnDMEInfor"
+            android:layout_width="wrap_content"
+            android:layout_height="67dp"
+            android:layout_marginEnd="10dp"
+            android:text="Thêm thông tin khám" />
+        <Button
+            android:id="@+id/btnDListFeedback"
+            android:layout_width="wrap_content"
+            android:layout_height="67dp"
+            android:layout_weight="1"
+            android:text="Phản hồi" />
+    </LinearLayout>
 
 </LinearLayout>

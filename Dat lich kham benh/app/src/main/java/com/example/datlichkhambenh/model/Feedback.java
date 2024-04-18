@@ -2,14 +2,15 @@ package com.example.datlichkhambenh.model;
 
 import java.util.HashMap;
 
-public class MedicalExaminationInformation {
+public class Feedback {
     private String id;
     private String fullName;
-    private String date;
+    private String emailSent;
+    private String emailDoctor;
     private String doctor;
-    private boolean status;
+    private String content;
 
-    public MedicalExaminationInformation() {
+    public Feedback() {
 
     }
 
@@ -29,12 +30,12 @@ public class MedicalExaminationInformation {
         this.fullName = fullName;
     }
 
-    public String getDate() {
-        return date;
+    public String getEmailSent() {
+        return emailSent;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setEmailSent(String emailSent) {
+        this.emailSent = emailSent;
     }
 
     public String getDoctor() {
@@ -45,20 +46,30 @@ public class MedicalExaminationInformation {
         this.doctor = doctor;
     }
 
-    public boolean getStatus() {
-        return status;
+    public String getContent() {
+        return content;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setContent(String content) {
+        this.content = content;
     }
+
+    public String getEmailDoctor() {
+        return emailDoctor;
+    }
+
+    public void setEmailDoctor(String emailDoctor) {
+        this.emailDoctor = emailDoctor;
+    }
+
     public HashMap<String, Object> convertHashMap(){
         HashMap<String, Object> work = new HashMap<>();
         work.put("id", id);
         work.put("fullName",fullName);
-        work.put("date", date);
+        work.put("emailSent", emailSent);
         work.put("doctor", doctor);
-        work.put("status", status);
+        work.put("content", content);
+        work.put("emailDoctor", emailDoctor);
         return work;
     }
 }

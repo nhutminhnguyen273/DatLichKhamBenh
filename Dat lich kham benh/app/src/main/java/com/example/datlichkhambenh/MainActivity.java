@@ -1,33 +1,32 @@
 package com.example.datlichkhambenh;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
+import android.view.Menu;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.navigation.NavigationView;
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.datlichkhambenh.databinding.ActivityMainBinding;
-import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    private ActivityMainBinding binding;
-    Button btnCreateProfile, btnCreateMedicalExaminationForm, btnHistory, btnListProfile;
+    Button btnCreateProfile, btnFeedback, btnHistory, btnListProfile, btnListFeedback, btnEvaluate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        com.example.datlichkhambenh.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
@@ -51,12 +50,17 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         btnCreateProfile = findViewById(R.id.btnHCreateProfile);
-        btnCreateMedicalExaminationForm = findViewById(R.id.btnHCrMedicalExaminationForm);
         btnHistory = findViewById(R.id.btnHHistory);
         btnListProfile = findViewById(R.id.btnHListProfile);
+        btnFeedback = findViewById(R.id.btnHFeedback);
+        btnListFeedback = findViewById(R.id.btnHListFeedback);
+        btnEvaluate = findViewById(R.id.btnHEvaluate);
         btnCreateProfile.setOnClickListener(v -> createProfile());
         btnListProfile.setOnClickListener(v -> listProfile());
-        btnHistory.setOnClickListener(v -> listMedicalHistory());
+        btnHistory.setOnClickListener(v -> history());
+        btnFeedback.setOnClickListener(v -> feedback());
+        btnListFeedback.setOnClickListener(v -> listFeedback());
+        btnEvaluate.setOnClickListener(v -> evaluate());
     }
 
     @Override
@@ -80,8 +84,20 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(MainActivity.this, ListProfileActivity.class);
         startActivity(i);
     }
-    private void listMedicalHistory(){
-        Intent i = new Intent(MainActivity.this, ListMedicalHistoryActivity.class);
+    private void history(){
+        Intent i = new Intent(MainActivity.this, InvoiceActivity.class);
+        startActivity(i);
+    }
+    private void feedback(){
+        Intent i = new Intent(MainActivity.this, FeedbackActivity.class);
+        startActivity(i);
+    }
+    private void listFeedback(){
+        Intent i = new Intent(MainActivity.this, ListFeedbackActivity.class);
+        startActivity(i);
+    }
+    private void evaluate(){
+        Intent i = new Intent(MainActivity.this, EvaluateActivity.class);
         startActivity(i);
     }
 }

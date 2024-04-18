@@ -11,7 +11,7 @@
         android:id="@+id/imgHLogo"
         android:layout_width="match_parent"
         android:layout_height="93dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/txtHTitle"
@@ -34,16 +34,16 @@
             android:id="@+id/btnHCreateProfile"
             android:layout_width="wrap_content"
             android:layout_height="62dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1"
             android:text="Tạo hồ sơ" />
 
         <Button
-            android:id="@+id/btnHCrMedicalExaminationForm"
+            android:id="@+id/btnHFeedback"
             android:layout_width="wrap_content"
             android:layout_height="62dp"
             android:layout_weight="1"
-            android:text="Lập phiếu khám" />
+            android:text="Phản hồi" />
     </LinearLayout>
 
     <LinearLayout
@@ -56,7 +56,7 @@
             android:id="@+id/btnHHistory"
             android:layout_width="wrap_content"
             android:layout_height="62dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_weight="1"
             android:text="Lịch sử khám bệnh" />
 
@@ -66,6 +66,27 @@
             android:layout_height="62dp"
             android:layout_weight="1"
             android:text="Danh sách hồ sơ" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="79dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnHListFeedback"
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:text="Danh sách phản hồi" />
+
+        <Button
+            android:id="@+id/btnHEvaluate"
+            android:layout_width="wrap_content"
+            android:layout_height="62dp"
+            android:layout_weight="1"
+            android:text="Đánh giá" />
     </LinearLayout>
 
 </LinearLayout>

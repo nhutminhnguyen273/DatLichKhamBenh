@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.ktx.Firebase;
 
 public class LoginActivity extends AppCompatActivity {
-    Button btnLogin, btnRegister;
+    Button btnLogin, btnRegister, btnResetPass;
     EditText txtEmail, txtPassword;
     private FirebaseAuth auth;
     @Override
@@ -38,10 +38,12 @@ public class LoginActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         btnLogin = findViewById(R.id.btnLLogin);
         btnRegister = findViewById(R.id.btnLRegister);
+        btnResetPass = findViewById(R.id.btnLResetPass);
         txtEmail = findViewById(R.id.txtLEmail);
         txtPassword = findViewById(R.id.txtLPass);
         btnLogin.setOnClickListener(v -> login());
         btnRegister.setOnClickListener(v -> register());
+        btnResetPass.setOnClickListener(v -> resetPass());
     }
     private void login(){
         String email, password;
@@ -59,9 +61,15 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(getApplicationContext(), "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(i);
+                    if(email.contains("doctor")){
+                        Toast.makeText(getApplicationContext(), "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(LoginActivity.this, DoctorActivity.class);
+                        startActivity(i);
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(i);
+                    }
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Email hoặc mật khẩu không chính xác!", Toast.LENGTH_SHORT).show();
@@ -72,5 +80,23 @@ public class LoginActivity extends AppCompatActivity {
     private void register(){
         Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(i);
+    }
+    private void resetPass(){
+        String email = txtEmail.getText().toString();
+        if(TextUtils.isEmpty(email)){
+            Toast.makeText(this, "Vui lòng nhập email!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(LoginActivity.this, "Vui lòng kiểm tra hộp thư để cập nhật mật khẩu!", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(LoginActivity.this, "Lỗi gửi mail!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }
